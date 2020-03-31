@@ -93,11 +93,9 @@ function spinner() {
 }
 
 echo "Getting sample images..."
-wget "https://www.moma.org/media/W1siZiIsIjcwNjE5Il0sWyJwIiwiY29udmVydCIsIi1xdWFsaXR5IDkwIC1yZXNpemUgMjAwMHgyMDAwXHUwMDNlIl1d.jpg?sha=e054a39456dbaa70" 
-sudo mv cri_000000070619.jpg marilyn.jpg
-wget "https://d1y8sb8igg2f8e.cloudfront.net/images/EricSchmidt008.original.jpg"
-sudo mv EricSchmidt008.original.jpg eric.jpg
+wget -O marilyn.jpg "https://www.moma.org/media/W1siZiIsIjcwNjE5Il0sWyJwIiwiY29udmVydCIsIi1xdWFsaXR5IDkwIC1yZXNpemUgMjAwMHgyMDAwXHUwMDNlIl1d.jpg?sha=e054a39456dbaa70" 
+wget -O eric.jpg "https://d1y8sb8igg2f8e.cloudfront.net/images/EricSchmidt008.original.jpg"
 echo "Starting Style Transfer"
-th neural_style.lua -content_image eric.jpg -style_image marilyn.jpg -gpu 0,1 -image_size 1000 -output_image output.jpg -backend cudnn -cudnn_autotune &
+th neural_style.lua -content_image eric.jpg -style_image marilyn.jpg -gpu 0,1 -image_size 500 -output_image output.jpg -backend cudnn -cudnn_autotune &
 spinner $!
 
