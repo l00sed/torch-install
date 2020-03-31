@@ -6,7 +6,7 @@
 1. `bash pre-install.sh`
 2. `bash install-part1.sh`
 3. `bash install-part2.sh`
-4. `bash install-part2.sh`
+4. `bash install-part3.sh`
 5. `bash neural-style.sh` (run within github.com/jcjohnson's "/neural-style" directory)
 
 ### Pre Install Script
